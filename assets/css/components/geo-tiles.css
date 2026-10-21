@@ -1,0 +1,217 @@
+/* --- GEO TILES (técnicas de geoprocessamento) --- */
+
+.geo-tiles {
+	--_geo-tiles-gap: 3px;
+	/* Teal / azul da referência visual do material */
+	--_geo-tiles-top-bg:  hsl(177, 55%, 42%);
+	--_geo-tiles-top-color: var(--fio-sys-color-primary-extra-dark);
+	--_geo-tiles-base-bg: var(--fio-sys-color-accent-medium);
+	--_geo-tiles-base-color: #111;
+	--_geo-tiles-radius: 0;
+	--_geo-tiles-font-family: var(--fio-sys-typography-head-family);
+	--_geo-tiles-font-weight: var(--fio-sys-typography-head-weight);
+	--_geo-tiles-font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+	--_geo-tiles-min-height: 7.5rem;
+
+	
+	 /* GRID PRINCIPAL */
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+    gap: var(--_geo-tiles-gap);
+
+    width: 100%;
+	
+		
+}
+
+.geo-tiles__side {
+    display: flex;
+    align-items: center;
+     justify-content: flex-end;
+   	max-width: 100%;    
+}
+
+.geo-tiles__side img {
+    display: block;
+    margin: 0;
+}
+
+
+/* Imagem Eficiência */
+.base_base {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.base_base img {
+    display: block;
+    margin: 0;
+}
+
+.geo-tiles__grid {
+	display: grid;
+	grid-template-columns: 1fr repeat(3, 1fr);
+	gap: var(--_geo-tiles-gap);
+	
+}
+/* =====================================================
+   CONTEÚDO DA DIREITA
+   ===================================================== */
+
+.geo-tiles__content {
+    grid-column: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--_geo-tiles-gap);
+
+    min-width: 0;
+}
+
+
+/* =====================================================
+   BOTÕES PRINCIPAIS
+   ===================================================== */
+
+.geo-tiles__base {
+    appearance: none;
+    border: 0;
+    margin: 0;
+
+    padding: 1rem 0.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: var(--_geo-tiles-font-family);
+    font-weight: var(--_geo-tiles-font-weight);
+    font-size: var(--_geo-tiles-font-size);
+    line-height: 1.25;
+
+    cursor: pointer;
+
+    transition: filter 0.2s ease, transform 0.2s ease;
+
+    width: 100%;
+    min-height: 3.5rem;
+
+    background-color: var(--_geo-tiles-base-bg);
+    color: var(--fio-sys-color-neutral-white);
+
+    border-radius: var(--_geo-tiles-radius);
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   GRID DOS 3 ELEMENTOS
+   ===================================================== */
+
+.geo-tiles__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: var(--_geo-tiles-gap);
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   ITENS DO GRID
+   ===================================================== */
+
+.geo-tiles__item {
+    appearance: none;
+    border: 0;
+    margin: 0;
+
+    padding: 1rem 0.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: var(--_geo-tiles-font-family);
+    font-weight: var(--_geo-tiles-font-weight);
+    font-size: var(--_geo-tiles-font-size);
+    line-height: 1.25;
+
+    cursor: pointer;
+
+    transition: filter 0.2s ease, transform 0.2s ease;
+
+    width: 100%;
+    min-height: var(--_geo-tiles-min-height);
+
+    background-color:  hsl(177, 55%, 42%);
+    color: var(--fio-sys-color-neutral-white);
+
+    border-radius: var(--_geo-tiles-radius);
+
+    box-sizing: border-box;
+}
+
+.link-imagem {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    border: none !important;
+}
+/* =====================================================
+   HOVER
+   ===================================================== */
+
+
+.geo-tiles__base:hover {
+    filter: brightness(1.08);
+	 background-color: hsl(207, 55%, 48%); 
+}
+.geo-tiles__item:hover {
+    filter: brightness(1.08);
+	 background-color: hsl(177, 55%, 34%);
+	 color: var(--fio-sys-color-primary-extra-dark);
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 767.98px) {
+
+    .geo-tiles
+.geo-tiles__item:hover,
+.geo-tiles__base:hover,
+.geo-tiles__item:focus-visible,
+.geo-tiles__base:focus-visible {
+	filter: brightness(1.08);
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.geo-tiles__item:focus-visible,
+.geo-tiles__base:focus-visible {
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
+}
+}
+@media (max-width: 767.98px) {
+	.geo-tiles__grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.geo-tiles__item {
+		min-height: 5.5rem;
+		font-size: 0.9rem;
+	}
+}
